@@ -1,0 +1,50 @@
+@startuml galaga
+
+class Juego
+class Jugador
+class Controles
+class Nave
+class Alienigenas
+class Bombas
+class Jefe
+class Recompensa
+class Puntos
+class Enemigo
+class Vidas
+class Niveles
+class Reinicio
+class Menu
+class Espacio
+class Meteoros
+
+
+Jugador"1" o-- "1"Juego
+Jugador"1" o-- "1"Controles
+Jugador"1" o-- "1"Nave
+Controles"1" o-- "1"Juego
+Controles"1" o-- "1"Nave
+Controles"1" o-- "1"Menu
+Controles"1" o-- "1"Reinicio
+Jefe"1,12" o-- "40"Alienigenas
+Jefe"1,12" o-- "100"Bombas
+Alienigenas"40" o-- "1"Nave
+
+Juego"1" *-- "1"Espacio
+Juego"1" *-- "1"Menu
+Juego"1" *-- "1"Reinicio
+Juego"1" *-- "1"Nave
+Juego"1" *-- "1"Alienigenas
+Juego"1" *-- "1,12"Jefe
+Juego"1" *-- "1"Recompensa
+Juego"1" *-- "200,600"Puntos
+Juego"1" *-- "32"Niveles
+Nave"1" *-- "100"Bombas
+Nave"1" *-- "3,6"Vidas
+Nave"1" *-- "1"40Enemigo
+Nivel"32" *-- "3,6"Meteoros
+Nivel"32" *-- "1"Recompensa
+
+Alienigena"1" --|> "1"Enemigo
+Jefe"1" --|> "1"Enemigo
+
+@enduml
