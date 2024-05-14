@@ -18,12 +18,12 @@ int main(int argc, char const *argv[]){
 
     int fotograma = 0;
     while(true){
-        this_thread::sleep_for(0.1s);
+        this_thread::sleep_for(0.001s);
         fotograma++;
 
-	    Element personaje = spinner(21, fotograma) | bold | color(Color::White) | bgcolor(Color::Blue);
-        Element eNave = text(nave);
-        Element dibujo = hbox({personaje, eNave});
+	    Element personaje = spinner(21, fotograma) | bold | color(Color::Green) | bgcolor(Color::Red);
+        Element nNave = text(nave);
+        Element dibujo = hbox({personaje, nNave});
 	    Screen pantalla = Screen::Create(Dimension::Full());
 	    Render(pantalla, dibujo);
 	    pantalla.Print();

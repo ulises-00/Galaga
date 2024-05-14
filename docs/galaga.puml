@@ -17,7 +17,6 @@ class Menu
 class Espacio
 class Meteoros
 
-
 Jugador"1" o-- "1"Juego
 Jugador"1" o-- "1"Controles
 Jugador"1" o-- "1"Nave
